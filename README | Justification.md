@@ -2,91 +2,15 @@
 
 BooksOnline is a simple bookstore app.
 
-## Features
+# Design Justification
 
-### Products
-The application supports three product types:
+The solution was designed with simplicity, clarity, and maintainability in mind. The data model follows a standard relational structure consisting of Products, Customers, Orders, and OrderItems. This separation keeps the model easy to understand while supporting future growth and changes to business rules.
 
-- Physical
-- Digital
-- Voucher
+Products support three types: Physical, Digital, and Voucher, as required by the assignment. Orders are linked to customers and contain one or more order items. To preserve historical accuracy, the product price is copied to the order item when the product is added to an order. This ensures that changes to product pricing do not affect previously created orders.
 
-Each product contains:
-- Name
-- Product Type
-- Unit Price
-- Available Stock Quantity
+A stock validation rule was implemented as the primary business rule. Before an order can be completed, the application verifies that sufficient stock is available. This demonstrates how business rules can be enforced through FileMaker scripts and calculations while remaining easy to modify.
 
-### Customers
-
-Customer records include:
-
-- First Name
-- Last Name
-- Email Address
-
-### Orders
-
-Orders can be created and managed through the application.
-
-Each order contains:
-
-- Customer
-- Status
-- Order Items
-
-Supported order statuses:
-
-- Draft
-- Completed
-
-### Order Items
-
-Each order item contains:
-
-- Product
-- Quantity
-- Current Unit Price
-
-The current unit price is copied from the product when the item is added to the order, ensuring historical order values remain unchanged if product prices are modified later.
-
-## Business Rule
-
-A stock validation rule is implemented.
-
-When an order is completed, the application verifies that sufficient stock is available for all ordered items. Orders that exceed available stock cannot be completed.
-
-## Admin View
-
-The application provides a simple administrative interface for:
-
-- Managing products
-- Managing customers
-- Managing orders
-
-## Technology
-
-- Claris FileMaker Pro
-- FileMaker scripting
-- Relational data model
-- UUID-based primary keys
-
-## Data Model
-
-The solution consists of the following core entities:
-
-- Products
-- Customers
-- Orders
-- OrderItems
-
-Relationships are used to connect customers to orders and products to order items.
-
-## Repository Contents
-
-- BooksOnline.fmp12 – FileMaker application
-- README.md – Project overview
-- Architecture_Overview.pdf – Scaling and architecture concept
+The user interface was intentionally kept minimal, focusing on functionality rather than presentation. A simple administrative area allows management of products, customers, and orders. UUIDs are used as primary keys throughout the solution to ensure reliable record identification and relationships.
 
 ## Author
 
