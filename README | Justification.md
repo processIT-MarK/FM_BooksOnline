@@ -1,6 +1,6 @@
 # BooksOnline
 
-BooksOnline is a simple bookstore application built in Claris FileMaker as part of the Software Engineer V assignment.
+BooksOnline is a simple bookstore app.
 
 ## Features
 
