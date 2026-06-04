@@ -1,2 +1,2 @@
 # FM_BooksOnline
-Test env.
+For details check README | Justification.md
